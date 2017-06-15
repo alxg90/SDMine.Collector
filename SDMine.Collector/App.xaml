@@ -1,0 +1,17 @@
+﻿<Application x:Class="SDMine.Collector.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SDMine.Collector"
+             xmlns:viewModels="clr-namespace:SDMine.Collector.ViewModels"
+             xmlns:views="clr-namespace:SDMine.Collector.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Main.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
+    </Application.Resources>
+</Application>

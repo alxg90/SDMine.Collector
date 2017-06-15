@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/SDMine.Collector/v14
+/SDMine.Collector/obj/Debug
+/SDMine.Collector/bin/Debug
+/SDMine.Collector.Services/SDMine.Collector.Services.csproj.user

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{756FE721-833F-49E2-B5CA-76F360802FA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDMine.Collector.Services</RootNamespace>
+    <AssemblyName>SDMine.Collector.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectorPagesService.cs" />
+    <Compile Include="Collectors\PostsCollector.cs" />
+    <Compile Include="FacebookApiRequest.cs" />
+    <Compile Include="ICollectorPagesService.cs" />
+    <Compile Include="Models\FacebookAttachmentItem.cs" />
+    <Compile Include="Models\FacebookCommentItem.cs" />
+    <Compile Include="Models\FacebookDataItem.cs" />
+    <Compile Include="Models\FacebookFromItem.cs" />
+    <Compile Include="Models\FacebookImageItem.cs" />
+    <Compile Include="Models\FacebookLocationItem.cs" />
+    <Compile Include="Models\FacebookMediaItem.cs" />
+    <Compile Include="Models\FacebookMemberItem.cs" />
+    <Compile Include="Models\FacebookPagingItem.cs" />
+    <Compile Include="Models\FacebookPlaceItem.cs" />
+    <Compile Include="Models\FacebookPostItem.cs" />
+    <Compile Include="Models\FacebookPostPropertyItem.cs" />
+    <Compile Include="Models\FacebookPrivacyItem.cs" />
+    <Compile Include="Models\FacebookReactionItem.cs" />
+    <Compile Include="Models\FacebookTagItem.cs" />
+    <Compile Include="Models\FacebookToItem.cs" />
+    <Compile Include="Models\Types.cs" />
+    <Compile Include="PostLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDMine.Collector.DataAccess\SDMine.Collector.DataAccess.csproj">
+      <Project>{05fa200c-b107-4e74-b5c4-1ac899db08aa}</Project>
+      <Name>SDMine.Collector.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
